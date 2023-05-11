@@ -12,6 +12,10 @@ public class LimitsController {
 	@Autowired
 	private Configuration configuration;
 	
+	
+	/** URL: http://localhost:8080/limits will fetch data 
+	 * from http://localhost:8888/limits-service/default spring-cloud configuration server
+	 * */
 	@GetMapping("/limits")
 	public Limits retrieveLimits() {
 		return new Limits(configuration.getMinimum(),configuration.getMaximum());
